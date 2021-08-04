@@ -1,0 +1,304 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+@import url("https://use.fontawesome.com/releases/v5.0.7/css/all.css");
+
+:root {
+  --green: rgba(0, 120, 70);
+  --green2: #61B140;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Poppins;
+  color: rgba(0, 0, 0, 0.8);
+}
+html {
+  height: 100%;
+}
+body {
+  min-height: 100vh;
+  position: relative;
+  height: auto;
+  background-color: rgba(102, 255, 0, 0.2);
+  font-size: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+.navbar {
+  max-width: 2000px;
+  display: flex;
+  margin: 0 auto 0;
+  padding: 1rem 3rem;
+  align-items: center;
+}
+.navbar .logo {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+.navbar .links {
+  list-style: none;
+  display: flex;
+  margin-left: auto;
+}
+.navbar .links a {
+  padding: 0.5rem 1rem;
+  margin-left: 1.5rem;
+  border-radius: 2rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition-duration: 300ms;
+}
+.navbar .links a:hover {
+  background-color: var(--green);
+  color: white;
+  font-weight: 500;
+}
+.navbar .links .dark-mode {
+  margin-left: 3em;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 50%;
+}
+
+
+.contacts {
+  width: 225px;
+  position: absolute;
+  right: 10px;
+  bottom: 20px;
+  text-align: center;
+}
+.contact-links {
+  margin-top: 10px;
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.social .fab {
+  font-size: 2rem;
+  transition-duration: 200ms;
+}
+.social .fab:hover {
+  color: black;
+}
+.social .fa-facebook{
+  color: blue;
+}
+.social .fa-twitter{
+  color: rgb(39, 168, 238);
+}
+.social .fa-instagram{
+  color: rgb(209, 32, 174);
+}
+
+
+/* for login and signup screens */
+.container {
+  box-sizing: border-box;
+  width: 300px;
+  padding: 3em 3em;
+  max-width: 100%;
+  border-radius: 30px;
+  /* box-shadow: 5px 10px 15px lightgrey; */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container h3 {
+  font-size: 0.9rem
+}
+.card {
+  margin: 5rem auto;
+  padding: 1rem;
+  width: 325px;
+  height: 425px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  box-sizing: border-box;
+  background: white;
+  border-radius: 2rem;
+}
+
+.card .title-info {
+  margin-top: 40px;
+  font-size: 1.1rem;
+}
+
+.card .login {
+  margin: 0 auto;
+  width: 90%;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.card .bar {
+  width: 100%;
+  display: flex;
+  box-shadow: border-box;
+}
+.card input {
+  display: flex;
+  width: 100%;
+  height: 45px;
+  box-sizing: border-box;
+  padding: 5px 25px;
+  margin-bottom: 30px;
+  border-style: solid;
+  border-radius: 3rem;
+  font-size: 0.85rem;
+}
+
+.button {
+  margin-top: 20px;
+  padding: 0.4rem 0.95rem;
+  background-color: var(--green);
+  color: white;
+  font-size: 1rem;
+  border-style: none;
+  border-radius: 3rem;
+}
+.button:hover {
+  cursor: pointer;
+}
+
+.error {
+  position: absolute;
+  bottom: 25px;
+  font-size: 0.75rem;
+  color: red;
+}
+
+
+/* for home and index screens */
+.search {
+  width: 425px;
+  display: flex;
+  float: left;
+}
+.search .search-form {
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.search-field {
+  margin: 20px;
+  position: relative;
+  display: flex;
+  align-items: center;
+
+}
+.search input[type=text] {
+  padding: 0.6rem 0.4rem 0.4rem 2.4rem;
+  height: 50px;
+  width: 100%;
+  display: flex;
+  float: right;
+  font-size: 0.9rem;
+  align-items: center;
+  border-radius: 2em;
+}
+.search input[type=text]:focus {
+  outline: none;
+}
+.search button {
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  right: 6px;
+  background: var(--green);
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.search button:hover {
+  background: black;
+}
+.options {
+  margin: 0 auto;
+  padding: 7px;
+  width: 160px;
+  height: 40px;
+  text-align: center;
+  font-size: 0.78rem;
+  border-radius: 0.6rem;
+  border: 2px solid rgba(138, 138, 138, 0.255);
+}
+.options:focus {
+  outline: none;
+}
+
+.info {
+  width: 385px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+i {
+  color: white;
+  font-size: 1rem;
+}
+
+.info h2 {
+  width: inherit;
+  font-size: 2.4rem;
+  letter-spacing: 0.15rem;
+}
+.info h2 span {
+  color: var(--green);
+  font-size: 1.1em;
+}
+.info p {
+  margin: -0.5rem 0rem 0.5rem;
+  font-weight: 400;
+  font-size: 1.2rem;
+}
+.info a {
+  padding: 1rem 2rem;
+  background-color: var(--green);
+  border-radius: 2em;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 600;
+  transition-duration: 300ms;
+}
+.info a:hover {
+  background-color: black;
+}
+
+
+/* media queries */
+@media screen and (max-width: 590px) {
+
+  .navbar {
+    padding: 0.4rem 2rem;
+  }
+  .navbar .links a {
+    margin-left: 0.95rem;
+    font-size: 0.8rem;
+  }
+  .navbar .logo {
+    width: 70px;
+  }
+
+  .contacts {
+    padding: 0rem 0rem;
+  }
+
+}
+

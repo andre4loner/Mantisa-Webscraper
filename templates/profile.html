@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+
+{% block head %}
+
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/profile.css') }}"
+/>
+<title>Mantisa | Profile</title>
+
+{% endblock %}
+
+
+{% block links %}
+  <li><a href="/" class="home-active">Home</a></li>
+  <li><a href="/profile" class="profile-active">Profile</a></li>
+  <li><a href="/lists" class="lists-active">Lists</a></li>
+  <li><a href="/logout">Log Out</a></li>
+{% endblock %}
+
+
+{% block body %}
+
+<div class="card">
+    
+  <h3 class="title-info">
+    Change your profile
+  </h3>
+  
+  <div class="signup">
+    <form action="" method="post" class="login">
+      <div class="bar">
+        <input type="name" name="name" id="name" class="input" placeholder="New name">
+      </div>
+      <div class="bar">
+        <input type="email" name="email" id="email" class="input" placeholder="New email">
+      </div>
+      <div class="bar">
+        <input type="password" name="password" id="password" class="input" placeholder="New Password">
+      </div>
+      <button type="submit" class="button">Submit</button>
+    </form>
+  </div>
+  
+</div>
+
+{% endblock %}

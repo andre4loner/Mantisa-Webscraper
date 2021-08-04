@@ -1,0 +1,43 @@
+
+{% extends 'base.html' %}
+
+
+{% block head %}
+
+  <link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='css/wish.css') }}"
+  />
+  <title>Mantisa | Wish List</title>
+
+{% endblock %}
+
+
+{% block links %}
+  <li><a href="/" class="home-active">Home</a></li>
+  <li><a href="/profile" class="profile-active">Profile</a></li>
+  <li><a href="/lists" class="lists-active">Lists</a></li>
+  <li><a href="/logout">Log Out</a></li>
+{% endblock %}
+
+
+{% block body %}
+  
+<div class="-info">
+  <h1>Wish List</h1>
+  <br>
+
+  <div class="info card">
+
+    {% for item in wish_list %}
+  
+      <h3>ID: {{ item }},  Product: 5,000,000</h3>
+  
+    {% endfor %}
+  
+  </div>
+  
+</div>
+
+{% endblock %}
+    

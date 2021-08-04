@@ -1,0 +1,74 @@
+
+{% extends 'base.html' %}
+
+
+{% block head %}
+  <link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/results.css') }}"
+  />
+  <title>Mantisa | Search results for "{{ query }}"</title>
+
+{% endblock %}
+
+
+{% block links %}
+  <li><a href="/" class="home-active">Home</a></li>
+  <li><a href="/profile" class="profile-active">Profile</a></li>
+  <li><a href="/lists" class="lists-active">Lists</a></li>
+  <li><a href="/logout">Log Out</a></li>
+{% endblock %}
+
+
+{% block body %}
+  
+<div class="--info">
+  <div class="search">
+    <form name="search-form" action="/search" method="get" class="search-form">
+      <div class="search-field">
+        <input type="text" placeholder="+ Removing brand names like 'Samsung' can produce more results" name="q" id="search"/>
+        <button onClick={submitHandler} type="submit">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+      <select name="options" class="options">
+        <option value="category" disabled>Select a category</option>
+        <option name="phones and tablets" value="mobile phones">Mobile phones</option>
+      </select>
+    </form>
+  </div>
+
+  <h2>Search results for "{{ query }}":</h2>
+  <br>
+
+  <div class="results-info">
+
+    {% for p in products %}    
+      <a href={{p[3]}} class="item-wrapper">
+        <div class="item">
+          <div class="marketplace-wrapper">
+            <img class="marketplace-logo" src={{p[4]}} alt="Jumia Logo">
+          </div>
+          <i class="fas fa-plus-circle"></i>
+          <img class="product-image" src={{p[2]}} alt="product image">
+          <span class="name">
+            {{ p[0] }}
+          </span>
+          <span class="price">
+            ₦ {{ p[1][-6:-3] }},{{ p[1][-3:] }}
+          </span>
+          
+        </div>
+      </a>
+    {% endfor %}
+
+  
+  </div>
+  <br>
+  
+</div>
+
+
+
+{% endblock %}
+    

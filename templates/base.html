@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/base.css') }}"
+    />
+    {% block head %} {% endblock %}
+  </head>
+
+  <body>
+    
+    <nav class="navbar">
+      <a href="/">
+        <!-- <img
+          class="logo"
+          src="static/images/logo.jpeg"
+        /> -->
+        <h1 class="logo">Mantisa</h1>
+      </a>
+      <ul class="links">
+        {% block links %} {% endblock %}
+      </ul>
+    </nav>
+
+    {% block body %}
+
+    {% endblock %}
+
+    
+    <footer class="contacts">
+      <h3>Contact Us:</h3>
+      <ul class="contact-links">
+        <li><a class="social fb" href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a></li>
+        <li><a class="social tw" href="https://twitter.com"  target="blank"><i class="fab fa-twitter"></i></a></li>
+        <li><a class="social in" href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a></li>
+      </ul>
+    </footer>
+
+  </body>
+</html>

@@ -1,0 +1,11 @@
+
+.login-active {
+  background-color: black;
+  color: white;
+}
+
+*:focus {
+    outline: none;
+}
+
+

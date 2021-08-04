@@ -1,0 +1,49 @@
+
+{% extends 'base.html' %}
+
+
+{% block head %}
+
+  <link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='css/login.css') }}"
+  />
+  <title>Mantisa | Log In</title>
+
+{% endblock %}
+
+
+{% block links %}
+  <li><a href="/" class="profile-active">Home</a></li>
+  <li><a href="/login" class="profile-active">Profile</a></li>
+  <li><a href="/login" class="lists-active">Lists</a></li>
+  <li><a href="/login" class="login-active">Log In</a></li>
+  <li><a href="/signup" class="signup-active">Sign Up</a></li>
+{% endblock %}
+
+
+{% block body %}
+
+  <div class="card">
+    
+    <h3 class="title-info">
+      Log in to your account
+    </h3>
+    
+    <form action="" method="post" class="login">
+      <div class="bar">
+        <input required type="email" name="email" id="email" class="input" placeholder="Email">
+      </div>
+      <div class="bar">
+        <input required type="password" name="password" id="password" class="input" placeholder="Password">
+      </div>
+      <button type="submit" class="button">Log In</button>
+
+      <span class="error">
+        {{ message }}
+      </span>
+    </form>
+    
+  </div>
+
+{% endblock %}

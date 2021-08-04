@@ -1,0 +1,47 @@
+
+{% extends 'base.html' %}
+
+
+{% block head %}
+
+  <link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='css/lists.css') }}"
+  />
+  <title>Mantisa | Lists</title>
+
+{% endblock %}
+
+
+{% block links %}
+  <li><a href="/" class="home-active">Home</a></li>
+  <li><a href="/profile" class="profile-active">Profile</a></li>
+  <li><a href="/lists" class="lists-active">Lists</a></li>
+  <li><a href="/logout">Log Out</a></li>
+{% endblock %}
+
+
+{% block body %}
+  
+  <div class="container">
+
+    <div class="lists-all">
+        
+      <a href="/wish">
+        <div class="list top-half">
+          <i class="fas fa-star"></i>
+          <h3>Wish List</h3>
+        </div>
+      </a>
+      
+      <a href="/deleted">
+        <div class="list bottom-half fa-lg">
+          <i class="fas fa-trash"></i>
+          <h3>Deleted List</h3>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,127 @@
+
+.--info{
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.search {
+  margin-bottom: 50px;
+  width: 550px;
+}
+.search-form {
+  flex-direction: row;
+}
+.search-form i {
+  color: white;
+}
+.search-form .options {
+  margin-top: -10px;
+}
+.search input[type=text] {
+  padding: 0 1.2rem;
+  display: flex;
+  font-size: 0.75rem;
+}
+
+.--info h2 {
+  padding: 0.45rem 2.2rem;
+  border-radius: 2rem;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 400;
+  background: rgba(0, 0, 0, 0.675);
+  color: white;
+}
+
+.results-info {
+  margin: 0 0 5rem;
+  padding: 15px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  color: black;
+  /* background-color: white;
+  box-shadow: 5px 10px 15px lightgrey; */
+  border-radius: 1.5em;
+}
+
+.item-wrapper {
+  margin: 30px 20px;
+}
+.item {
+  padding: 5px 10px;
+  width: 205px;
+  height: 315px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border-radius: 20px;
+  border-bottom: 0px solid var(--green);
+  background: white;
+  box-shadow: 3px 3px 10px rgba(211, 211, 211, 0.573);
+  transition-duration: 200ms;
+}
+.item:hover {
+  color: rgb(0, 87, 0);
+  border-bottom: 4px solid var(--green);
+}
+.marketplace-wrapper {
+  position: absolute;
+  top: 9px;
+  left: 13px;
+  display: flex;
+  align-items: center;
+}
+.marketplace-logo{
+  margin-right: 10px;
+  height: 15px;
+}
+.marketplace-text {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--green);
+}
+.item i {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 1.7rem;
+  color: var(--green2);
+  transition-duration: 100ms;
+}
+.item i:hover {
+  font-size: 1.9rem;
+  color: var(--green);
+}
+.product-image {
+  margin: 25px 0 10px;
+  width: 155px;
+  height: 155px;
+  border-radius: 0.4rem;
+}
+.name {
+  margin-bottom: 5px;
+  width: 175px;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 165%;
+}
+.price {
+  height: 25px;
+  position: absolute;
+  bottom: 5px;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+

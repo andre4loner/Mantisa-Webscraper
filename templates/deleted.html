@@ -1,0 +1,56 @@
+
+{% extends 'base.html' %}
+
+
+{% block head %}
+
+  <link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='css/deleted.css') }}"
+  />
+  <title>Deleted List</title>
+
+{% endblock %}
+
+
+{% block links %}
+  <li><a href="/" class="home-active">Home</a></li>
+  <li><a href="/profile" class="profile-active">Profile</a></li>
+  <li><a href="/lists" class="lists-active">Lists</a></li>
+  <li><a href="/logout">Log Out</a></li>
+{% endblock %}
+
+
+{% block body %}
+  
+<div class="-info">
+  <h1>Deleted List</h1>
+  <br>
+
+  <div class="info card">
+
+    {% for item in list %}
+  
+      <h3>ID: {{ item[0] }},  Product: {{ item[1] }}</h3>
+  
+    {% endfor %}
+  
+  </div>
+  <br>
+
+  <div class="delete">
+    <div class="delete card">
+    
+      <h3>Delete item: </h3>
+      <!-- form method post -->
+      <form action="">
+        <input type="text" placeholder="Enter ID" name="ID" id="">
+        <button type="submit"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></button>
+      </form>
+    </div>
+  </div>
+  
+</div>
+
+{% endblock %}
+    

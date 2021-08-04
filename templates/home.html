@@ -1,0 +1,53 @@
+
+{% extends 'base.html' %}
+
+
+{% block head %}
+
+  <link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='css/home.css') }}"
+  />
+  <title>Mantisa | Homepage</title>
+
+{% endblock %}
+
+{% block links %}
+  <li><a href="/" class="home-active">Home</a></li>
+  <li><a href="/profile" class="profile-active">Profile</a></li>
+  <li><a href="/lists" class="lists-active">Lists</a></li>
+  <li><a href="/logout">Log Out</a></li>
+{% endblock %}
+
+
+{% block body %}
+
+  <div class="container">
+
+    <div class="search">
+      <form name="search-form" action="/search" method="get" class="search-form">
+        <div class="search-field">
+          <input type="text" placeholder="Best prices, one click away" name="q" id="search"/>
+          <button onClick={submitHandler} type="submit">
+            <i class="fa fa-search"></i>
+          </button>
+        </div>
+        <select name="options" class="options">
+          <option value="category" disabled>Select a category</option>
+          <option name="phones and tablets" value="mobile phones">Mobile phones</option>
+        </select>
+      </form>
+    </div>
+
+    <div class="info">
+      <h2>Welcome, <span class="starbucks">{{ g.user['name'] }}!</span></h2>
+      <p>
+        Find the cheapest prices of thousands of your favorite products online!
+      </p>
+      <a href="#" class="learn"> Learn More </a>
+    </div>
+
+  </div>
+
+{% endblock %}
+    

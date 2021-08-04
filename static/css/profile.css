@@ -1,0 +1,90 @@
+
+.profile-active {
+  background-color: black;
+  color: white;
+}
+
+.container {
+  box-sizing: border-box;
+  width: 300px;
+  padding: 3em 3em;
+  max-width: 100%;
+  border-radius: 30px;
+  box-shadow: 5px 10px 15px lightgrey;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container h3 {
+  font-size: 0.9rem
+}
+
+
+* {
+  font-family: 'Poppins', sans-serif;
+}
+*:focus {
+    outline: none;
+}
+
+body {
+  margin: 0;
+}
+
+.card {
+  margin: 10rem auto;
+  padding: 1rem;
+  width: 400px;
+  height: 550px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  box-sizing: border-box;
+  background: white;
+  border-radius: 2rem;
+}
+
+.card .title-info {
+  margin-top: 50px;
+  font-size: 1.2rem;
+}
+
+.card .login {
+  margin: 0 auto;
+  width: 85%;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+}
+.card .bar {
+  display: flex;
+  box-shadow: border-box;
+}
+.card input {
+  display: flex;
+  height: 50px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 5px 25px;
+  margin-bottom: 30px;
+  border-style: solid;
+  border-radius: 3rem;
+  font-size: 1.1rem;
+}
+
+.button {
+  margin-top: 20px;
+  padding: 0.6rem;
+  width: 125px;
+  background-color: var(--green);
+  color: white;
+  font-size: 1.3rem;
+  border-style: none;
+  border-radius: 3rem;
+}
+.button:hover {
+  cursor: pointer;
+}

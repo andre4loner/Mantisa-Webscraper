@@ -1,0 +1,14 @@
+
+.signup-active {
+  background-color: black;
+  color: white;
+}
+
+*:focus {
+    outline: none;
+}
+
+
+.card {
+  height: 475px;
+}
