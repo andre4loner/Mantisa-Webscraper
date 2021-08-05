@@ -22,27 +22,29 @@
 
 {% block body %}
 
-<div class="card">
+<div class="card-wrapper">
+  <div class="card">
+      
+    <h3 class="title-info">
+      Change your profile
+    </h3>
     
-  <h3 class="title-info">
-    Change your profile
-  </h3>
-  
-  <div class="signup">
-    <form action="" method="post" class="login">
-      <div class="bar">
-        <input type="name" name="name" id="name" class="input" placeholder="New name">
-      </div>
-      <div class="bar">
-        <input type="email" name="email" id="email" class="input" placeholder="New email">
-      </div>
-      <div class="bar">
-        <input type="password" name="password" id="password" class="input" placeholder="New Password">
-      </div>
-      <button type="submit" class="button">Submit</button>
-    </form>
+    <div class="signup">
+      <form action="" method="post" class="login">
+        <div class="bar">
+          <input type="name" name="name" id="name" class="input" placeholder="New name">
+        </div>
+        <div class="bar">
+          <input type="email" name="email" id="email" class="input" placeholder="New email">
+        </div>
+        <div class="bar">
+          <input type="password" name="password" id="password" class="input" placeholder="New Password">
+        </div>
+        <button type="submit" class="button">Submit</button>
+      </form>
+    </div>
+    
   </div>
-  
 </div>
 
 {% endblock %}

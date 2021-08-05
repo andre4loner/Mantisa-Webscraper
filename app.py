@@ -168,7 +168,6 @@ def results():
     content = json.loads(response.content)
     content_products = content['data']['searchByStore']['products']
 
-    # print(response, "\n\n")
     count = 1
     for p in content_products:
       if ((p['categories'] != None) and (p['categories'][2] != None)):
@@ -197,7 +196,7 @@ def results():
   spider_jumia(query, options, 2)
 
   products_unsorted = products_jumia + products_konga
-  products = sorted(products_unsorted, key=operator.itemgetter(2))
+  products = sorted(products_unsorted, key=operator.itemgetter(2)) 
   for p in products:
     p[2] = str(p[2])
 

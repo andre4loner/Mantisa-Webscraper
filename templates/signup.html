@@ -25,25 +25,27 @@
 
 {% block body %}
 
-  <div class="card">
-    
-    <h3 class="title-info">
-      Create a new account
-    </h3>
-    
-    <form action="" method="post" class="login">
-      <div class="bar">
-        <input required type="name" name="name" id="name" class="input" placeholder="Name">
-      </div>
-      <div class="bar">
-        <input required type="email" name="email" id="email" class="input" placeholder="Email">
-      </div>
-      <div class="bar">
-        <input required type="password" name="password" id="password" class="input" placeholder="Password">
-      </div>
-      <button type="submit" class="button">Sign Up</button>
-    </form>
-    
+  <div class="card-wrapper">  
+    <div class="card">
+      
+      <h3 class="title-info">
+        Create a new account
+      </h3>
+      
+      <form action="" method="post" class="login">
+        <div class="bar">
+          <input required type="name" name="name" id="name" class="input" placeholder="Name">
+        </div>
+        <div class="bar">
+          <input required type="email" name="email" id="email" class="input" placeholder="Email">
+        </div>
+        <div class="bar">
+          <input required type="password" name="password" id="password" class="input" placeholder="Password">
+        </div>
+        <button type="submit" class="button">Sign Up</button>
+      </form>
+      
+    </div>
   </div>
 
 {% endblock %}
