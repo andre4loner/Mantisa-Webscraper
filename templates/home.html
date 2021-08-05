@@ -3,14 +3,15 @@
 
 
 {% block head %}
-
   <link
     rel="stylesheet"
     href="{{ url_for('static', filename='css/home.css') }}"
   />
   <title>Mantisa | Homepage</title>
 
+  <script src="{{ url_for('static', filename='js/searchValidator.js') }}" defer></script>
 {% endblock %}
+
 
 {% block links %}
   <li><a href="/" class="home-active">Home</a></li>
@@ -23,9 +24,8 @@
 {% block body %}
 
   <div class="container">
-
     <div class="search">
-      <form name="search-form" action="/search" method="get" class="search-form">
+      <form name="search-form" action="/search" onsubmit="return validateForm()" method="get" class="search-form">
         <div class="search-field">
           <input type="text" placeholder="Best prices, one click away" name="q" id="search"/>
           <button onClick={submitHandler} type="submit">

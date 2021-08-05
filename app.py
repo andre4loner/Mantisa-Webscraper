@@ -141,7 +141,7 @@ def results():
             img = item.find('img').get('data-src')
             link = "https://jumia.com.ng" + item.get('href')
             marketplace_logo = "https://logosarchive.com/wp-content/uploads/2021/05/jumia-seeklogo.com_.png"
-            product_jumia = [name, str(price), img, link, marketplace_logo]
+            product_jumia = [name, price, img, link, marketplace_logo]
             # print(product_jumia[0],'\n',product_jumia[1],'\n',product_jumia[3], "\n\n")
             products_jumia.append(product_jumia)
             count += 1
@@ -170,7 +170,7 @@ def results():
     # print(response, "\n\n")
     count = 1
     for p in content_products:
-      if (p['categories'] != None):
+      if ((p['categories'] != None) and (p['categories'][2] != None)):
         if (p['categories'][2]['name'].lower() == 'smartphones'):
           name = p['name']
           price = p['special_price']
@@ -178,7 +178,7 @@ def results():
           img = 'https://www-konga-com-res.cloudinary.com/w_850,f_auto,fl_lossy,dpr_auto,q_auto/media/catalog/product' + p['image_thumbnail']
           link = 'https://www.konga.com/product/' + p['url_key']
           marketplace_logo = 'https://www.konga.com/static/meta-logo.png'
-          product_konga = [name, str(price), img, link, marketplace_logo]
+          product_konga = [name, price, img, link, marketplace_logo]
           products_konga.append(product_konga)
           print(f'name -> {name}')
           print(f'price -> {price}')
