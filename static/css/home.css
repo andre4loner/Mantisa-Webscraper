@@ -5,12 +5,125 @@
 }
 
 
+.container {
+  padding: 1.5rem 0rem 0em;
+  margin: 10rem auto;
+  max-width: 1000px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search {
+  width: 425px;
+  display: flex;
+  float: left;
+}
+.search .search-form {
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.search-field {
+  margin-bottom: 20px;
+  position: relative;
+  display: flex;
+  align-items: center;
+
+}
+.search input[type=text] {
+  padding: 0.6rem 0.4rem 0.4rem 2rem;
+  height: 50px;
+  width: 100%;
+  display: flex;
+  float: right;
+  font-size: 0.85rem;
+  align-items: center;
+  border-radius: 2em;
+}
+.search input[type=text]:focus {
+  outline: none;
+}
+.search button {
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  right: 6px;
+  background: var(--green);
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.search button:hover {
+  background: black;
+}
+.options {
+  margin: 0 auto;
+  padding: 7px;
+  width: 160px;
+  height: 40px;
+  text-align: center;
+  font-size: 0.78rem;
+  border-radius: 0.6rem;
+  border: 2px solid rgba(138, 138, 138, 0.255);
+}
+.options:focus {
+  outline: none;
+}
+
+.info {
+  width: 385px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  text-align: center;
+}
+i {
+  color: white;
+  font-size: 1rem;
+}
+
+.info h2 {
+  margin-bottom: 1rem;
+  width: inherit;
+  font-size: 2.4rem;
+  letter-spacing: 0.15rem;
+}
+.info h2 span {
+  color: var(--green);
+  font-size: 1.1em;
+}
+.info p {
+  margin: -0.5rem 0rem 1.5rem;
+  width: 100%;
+  font-weight: 400;
+  font-size: 1.1rem;
+}
+.info a {
+  padding: 1rem 2rem;
+  background-color: var(--green);
+  border-radius: 2em;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 600;
+  transition-duration: 300ms;
+}
+.info a:hover {
+  background-color: black;
+}
+
+
 @media screen and (max-width: 1150px) {
   .container {
+    margin-bottom: 0;
+    padding: 2rem 0rem;
     display: flex;
     flex-direction: column;
-    padding: 2rem 0rem;
-    margin-bottom: 0;
   }
 
   .info {
@@ -25,3 +138,14 @@
   }
 
 }
+
+@media screen and (max-width: 700px) {
+  .info {
+    width: 95%;
+  }
+
+  .container {
+    margin: 4rem auto 0;
+  }
+}
+

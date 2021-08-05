@@ -162,7 +162,7 @@ def results():
         'TE': 'Trailers',
     }
 
-    data = '{"query":"{\\n searchByStore (search_term: [], numericFilters: [], sortBy: \\"\\", query: \\"' + i_name_raw + '\\", paginate: {page: 0, limit: 30}, store_id: 1) {\\npagination {limit,page,total},products {image_thumbnail,product_id,name,price,special_price,url_key,categories {id, name},seller {id,name}}\\n }\\n }\\n "}'
+    data = '{"query":"{\\n searchByStore (search_term: [], numericFilters: [], sortBy: \\"\\", query: \\"' + i_name_raw + '\\", paginate: {page: 0, limit: 20}, store_id: 1) {\\npagination {limit,page,total},products {image_thumbnail,product_id,name,price,special_price,url_key,categories {id, name},seller {id,name}}\\n }\\n }\\n "}'
 
     response = requests.post('https://api.konga.com/v1/graphql', headers=headers, data=data)
     content = json.loads(response.content)
@@ -193,7 +193,7 @@ def results():
   options = request.args.get('options')
 
   spider_konga(query)
-  spider_jumia(query, options, 2)
+  spider_jumia(query, options, 1)
 
   products_unsorted = products_jumia + products_konga
   products = sorted(products_unsorted, key=operator.itemgetter(2)) 
