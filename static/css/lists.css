@@ -7,25 +7,29 @@
 .container {
   box-sizing: border-box;
   margin: 0 auto;
-  padding: 3rem 2rem;
+  padding: 0;
   width: 80%;
+  height: 700px;
 }
 
 .lists-all {
   width: 100%;
-  margin: 5rem auto 4rem;
+  margin: 3rem auto 4rem;
   display: flex;
-  flex-flow: row;
-  justify-content: space-evenly;
+  justify-content: start;
 }
-.lists-all .list {
-  margin: 0 3rem;
+.lists-all a {
+  margin: 3rem 3rem;
   height: 175px;
   width: 275px;
+}
+.lists-all .list {
+  height: 100%;
+  width: 100%;
   background-color: white;
   color: black;
   box-shadow: 5px 10px 15px lightgrey; 
-  border-radius: 2.5em;
+  border-radius: 2.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -36,7 +40,7 @@
   font-size: 1.4rem;
 }
 
-.fas {
+.list .fas {
   margin-bottom: 1rem;
   color: rgba(0, 120, 70);
   font-size: 1.8rem;
@@ -49,23 +53,13 @@
     flex-direction: column;
     align-items: center;
   }
-  .lists-all .list {
-    margin-top: 30px;
-  }
-  h1 {
-    margin-bottom: 3rem;
-  }
-
-  .lists-all {
-    margin-bottom: 2rem;
-  }
 
 }
 
 @media screen and (max-width: 400px) {
 
   .container {
-    padding: 2rem 3rem;
+    padding: 2rem 0rem;
   }
 
 }

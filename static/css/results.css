@@ -1,6 +1,7 @@
 
 .--info{
-  padding: 2.5rem;
+  margin-top: 2rem;
+  padding: 1.25rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -25,6 +26,11 @@
   font-size: 0.75rem;
 }
 
+.help-text {
+  margin: -0.5rem 0 2rem;
+  font-size: 0.85rem;
+  text-align: center;
+}
 .--info h2 {
   padding: 0.45rem 2.2rem;
   border-radius: 2rem;

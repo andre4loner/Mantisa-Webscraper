@@ -9,7 +9,10 @@
       rel="stylesheet"
       href="{{ url_for('static', filename='css/base.css') }}"
     />
+
     {% block head %} {% endblock %}
+
+    <script src="{{ url_for('static', filename='js/script.js') }}" defer></script> 
   </head>
 
   <body>
@@ -20,9 +23,16 @@
           class="logo"
           src="static/images/logo.jpeg"
         /> -->
-        <h1 class="logo">Mantisa</h1>
+        <div class="logo">
+          <h1 class="logo-text">Mantisa.</h1>
+          <i class="logo-icon fas fa-mouse-pointer"></i>
+        </div>
       </a>
-      <ul class="links">
+
+      <div onClick="return menuHandler()" class="menu-select">
+        <i class="fas fa-bars"></i>
+      </div>
+      <ul class="links" id="menu-links">
         {% block links %} {% endblock %}
       </ul>
     </nav>

@@ -10,3 +10,15 @@ function validateForm() {
     document.getElementByClass("search-form").submit()
   }
 }
+
+
+function menuHandler() {
+  // alert("beibi")
+  if (document.getElementById("menu-links").style.right === "0px") {
+    document.getElementById("menu-links").style.right = "-250px"
+  }
+  else {
+    document.getElementById("menu-links").style.right = "0px"
+
+  }
+}

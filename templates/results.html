@@ -9,7 +9,7 @@
   />
   <title>Mantisa | Search results for "{{ query }}"</title>
 
-  <script src="{{ url_for('static', filename='js/searchValidator.js') }}" defer></script> 
+  <script src="{{ url_for('static', filename='js/script.js') }}" defer></script> 
 {% endblock %}
 
 
@@ -27,7 +27,7 @@
     <div class="search">
       <form name="search-form" action="/search" onsubmit="return validateForm()"  method="get" class="search-form">
         <div class="search-field">
-          <input type="text" placeholder="+ Removing brand names like 'Samsung' can produce more results" name="q" id="search"/>
+          <input type="text" placeholder="Best prices, one click away" name="q" id="search"/>
           <button type="submit">
             <i class="fa fa-search"></i>
           </button>
@@ -39,6 +39,9 @@
       </form>
     </div>
 
+    <span class="help-text">
+      *Removing brand names like 'Apple' and 'Samsung' can produce more results.
+    </span>
     <h2>Search results for "{{ query }}":</h2>
     <br>
 
