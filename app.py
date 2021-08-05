@@ -129,6 +129,7 @@ def results():
 
         if ((item != None) and (len(item.find('div', class_='prc').text.strip()) <= 9)):
           if(i_name_raw.lower() in item.find('h3', class_='name').text.strip().lower()):
+            _id = item['data-id']
             name_ = item.find('h3', class_='name').text.strip()
             if (len(name_) > 55):
               name = f'{name_[:55]}   ...{name_[-15::]}'
@@ -141,8 +142,8 @@ def results():
             img = item.find('img').get('data-src')
             link = "https://jumia.com.ng" + item.get('href')
             marketplace_logo = "https://logosarchive.com/wp-content/uploads/2021/05/jumia-seeklogo.com_.png"
-            product_jumia = [name, price, img, link, marketplace_logo]
-            # print(product_jumia[0],'\n',product_jumia[1],'\n',product_jumia[3], "\n\n")
+            product_jumia = [_id, name, price, img, link, marketplace_logo]
+            print(product_jumia[0],'\n',product_jumia[1],'\n',product_jumia[3], "\n\n")
             products_jumia.append(product_jumia)
             count += 1
       page += 1
@@ -161,7 +162,7 @@ def results():
         'TE': 'Trailers',
     }
 
-    data = '{"query":"{\\n searchByStore (search_term: [], numericFilters: [], sortBy: \\"\\", query: \\"' + i_name_raw + '\\", paginate: {page: 0, limit: 30}, store_id: 1) {\\npagination {limit,page,total},products {image_thumbnail,name,price,special_price,url_key,categories {name,url_key},seller {id,name}}\\n }\\n }\\n "}'
+    data = '{"query":"{\\n searchByStore (search_term: [], numericFilters: [], sortBy: \\"\\", query: \\"' + i_name_raw + '\\", paginate: {page: 0, limit: 30}, store_id: 1) {\\npagination {limit,page,total},products {image_thumbnail,product_id,name,price,special_price,url_key,categories {id, name},seller {id,name}}\\n }\\n }\\n "}'
 
     response = requests.post('https://api.konga.com/v1/graphql', headers=headers, data=data)
     content = json.loads(response.content)
@@ -172,13 +173,14 @@ def results():
     for p in content_products:
       if ((p['categories'] != None) and (p['categories'][2] != None)):
         if (p['categories'][2]['name'].lower() == 'smartphones'):
+          _id = str(p['categories'][0]['id']) + str(p['categories'][2]['id']) + str(p['product_id'])
           name = p['name']
           price = p['special_price']
           category = p['categories'][2]['name']
           img = 'https://www-konga-com-res.cloudinary.com/w_850,f_auto,fl_lossy,dpr_auto,q_auto/media/catalog/product' + p['image_thumbnail']
           link = 'https://www.konga.com/product/' + p['url_key']
           marketplace_logo = 'https://www.konga.com/static/meta-logo.png'
-          product_konga = [name, price, img, link, marketplace_logo]
+          product_konga = [_id, name, price, img, link, marketplace_logo]
           products_konga.append(product_konga)
           print(f'name -> {name}')
           print(f'price -> {price}')
@@ -195,7 +197,9 @@ def results():
   spider_jumia(query, options, 2)
 
   products_unsorted = products_jumia + products_konga
-  products = sorted(products_unsorted, key=operator.itemgetter(1))
+  products = sorted(products_unsorted, key=operator.itemgetter(2))
+  for p in products:
+    p[2] = str(p[2])
 
   return render_template('results.html', products=products, query=query)
 

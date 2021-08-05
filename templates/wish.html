@@ -27,13 +27,27 @@
   <h1>Wish List</h1>
   <br>
 
-  <div class="info card">
+  <div class="results-info">
 
-    {% for item in wish_list %}
-  
-      <h3>ID: {{ item }},  Product: 5,000,000</h3>
-  
+    {% for p in products %}    
+      <a href={{p[3]}} class="item-wrapper">
+        <div class="item">
+          <div class="marketplace-wrapper">
+            <img class="marketplace-logo" src={{p[4]}} alt="Jumia Logo">
+          </div>
+          <i class="fas fa-minus-circle"></i>
+          <img class="product-image" src={{p[2]}} alt="product image">
+          <span class="name">
+            {{ p[0] }}
+          </span>
+          <span class="price">
+            ₦ {{ p[1] }}
+          </span>
+          
+        </div>
+      </a>
     {% endfor %}
+
   
   </div>
   

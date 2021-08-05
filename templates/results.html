@@ -45,18 +45,18 @@
     <div class="results-info">
 
       {% for p in products %}    
-        <a href={{p[3]}} class="item-wrapper">
+        <a data-id={{p[0]}} href={{p[4]}} class="item-wrapper">
           <div class="item">
             <div class="marketplace-wrapper">
-              <img class="marketplace-logo" src={{p[4]}} alt="Jumia Logo">
+              <img class="marketplace-logo" src={{p[5]}} alt="Jumia Logo">
             </div>
             <i class="fas fa-plus-circle"></i>
-            <img class="product-image" src={{p[2]}} alt="product image">
+            <img class="product-image" src={{p[3]}} alt="product image">
             <span class="name">
-              {{ p[0] }}
+              {{ p[1] }}
             </span>
             <span class="price">
-              ₦ {{ p[1] }}
+              ₦ {{ p[2][-6:-3] }},{{ p[2][-3:] }}
             </span>
             
           </div>
