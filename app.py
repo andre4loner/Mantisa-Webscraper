@@ -90,7 +90,7 @@ def signup():
     registered_user = users_collection.find_one({
       "email": request.form["email"]
     })
-    session['user_id'] = registered_user._id
+    session['user_id'] = str(ObjectId(registered_user['_id']))
     return redirect(url_for('home'))
 
   return render_template('signup.html')
