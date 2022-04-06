@@ -89,6 +89,7 @@ a {
   right: 10px;
   bottom: 20px;
   text-align: center;
+  z-index: 0;
 }
 .contact-links {
   margin-top: 10px;
@@ -121,7 +122,7 @@ a {
 
   .navbar {
     padding: 0.4rem 2rem;
-    position: sticky;
+    position: fixed;
     top: 0;
     z-index: 100;
   }
